@@ -31,7 +31,7 @@ msgstr "地质调谐仪像原版一样同时调谐一个泉"
 #. GeoTuner_mod.UI.UISIDESCREENS.OPTION.ENERGYCONSUMER.TITLE
 msgctxt "GeoTuner_mod.UI.UISIDESCREENS.OPTION.ENERGYCONSUMER.TITLE"
 msgid "Energy Consumption"
-msgstr "调谐仪耗电量"
+msgstr "调谐仪耗电量调整"
 
 #. GeoTuner_mod.UI.UISIDESCREENS.OPTION.ENERGYCONSUMER.TOOLTIP
 msgctxt "GeoTuner_mod.UI.UISIDESCREENS.OPTION.ENERGYCONSUMER.TOOLTIP"

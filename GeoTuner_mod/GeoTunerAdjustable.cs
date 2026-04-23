@@ -69,7 +69,7 @@ namespace GeoTuner_mod
             }
         }
 
-        bool IUserControlledCapacity.ControlEnabled()
+        bool ControlEnabled()
 		{
 			return true;
 		}
@@ -92,10 +92,19 @@ namespace GeoTuner_mod
 
         protected override void OnSpawn()
         {
+            if (option.energyConsumer)
+            {
+                this.energyConsumer.BaseWattageRating = BaseWattageRating * this.MAX_GEOTUNED * option.Geyser_Ratio;
+            }
             this.Update();
         }
 
- 
+        protected override void OnCleanUp()
+        {
+            base.Unsubscribe<GeoTunerAdjustable>(-905833192, GeoTunerAdjustable.OnCopySettingsDelegate,false);
+            base.OnCleanUp();
+        }
+
         internal void OnCopySettings(object data)
         {
             GeoTunerAdjustable component = ((GameObject)data).GetComponent<GeoTunerAdjustable>();
@@ -137,6 +146,10 @@ namespace GeoTuner_mod
 
                 //global::Debug.Log("协调：" + this.MAX_GEOTUNED);
             }
+            if (option.energyConsumer)
+            {
+                this.energyConsumer.BaseWattageRating = BaseWattageRating * this.MAX_GEOTUNED * option.Geyser_Ratio;
+            }
             Old_GEOTUNED = this.MAX_GEOTUNED;
 
         }
@@ -149,7 +162,7 @@ namespace GeoTuner_mod
         private static readonly EventSystem.IntraObjectHandler<GeoTunerAdjustable> OnCopySettingsDelegate = new EventSystem.IntraObjectHandler<GeoTunerAdjustable>(new Action<GeoTunerAdjustable, object>(GeoTunerAdjustable.OnCopySettings));
 
 
-
+        float BaseWattageRating = 120f;
 
         [MyCmpAdd]
         public CopyBuildingSettings copyBuildingSettings;

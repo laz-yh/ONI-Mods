@@ -31,10 +31,10 @@ namespace GeoTuner_mod
 
             if (SingletonOptions<Options>.Instance.energyConsumer)
             {
-                Patches.Patch_EnergyConsumer_WattsNeededWhenActive.Patch(harmony); 
+                Patches.Patch_EnergyConsumer_WattsNeededWhenActive.Patch(harmony);
             }
 
-         }
+        }
     }
 
         internal class Patches
@@ -379,25 +379,18 @@ namespace GeoTuner_mod
         {
 
             public static void Patch(Harmony harmony)
-            {   
-                    MethodInfo method = typeof(EnergyConsumer).GetProperty("WattsNeededWhenActive", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).GetGetMethod();
-                    MethodInfo method2 = typeof(Patch_EnergyConsumer_WattsNeededWhenActive).GetMethod("Prefix");
-                    harmony.Patch(method, new HarmonyMethod(method2), null, null, null);
+            {
+                MethodInfo method = typeof(EnergyConsumer).GetProperty("WattsNeededWhenActive", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).GetGetMethod();
+                MethodInfo method2 = typeof(Patch_EnergyConsumer_WattsNeededWhenActive).GetMethod("Prefix");
+                harmony.Patch(method, new HarmonyMethod(method2), null, null, null);
             }
             public static bool Prefix(EnergyConsumer __instance, Building ___building, ref float __result)
             {
-
-                if (___building.Def.PrefabID != "GeoTuner")
+                if ( ___building.Def.PrefabID != "GeoTuner"|| __instance == null)
                 {
                     return true;
                 }
-                GeoTunerAdjustable component = __instance.GetComponent<GeoTunerAdjustable>();
-                if (component == null)
-                {
-                    return true;
-                }
-                __result = ___building.Def.EnergyConsumptionWhenActive * component.UserMaxCapacity * Option.Geotuners_Ratio;
-                __instance.BaseWattageRating = __result;
+                __result = __instance.BaseWattageRating;
                 return false;
             }
         }
