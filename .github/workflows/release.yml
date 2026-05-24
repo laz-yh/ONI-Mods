@@ -44,6 +44,8 @@ on:
       - 'v*'
   pull_request:
     branches: [ "master" ]
+    paths-ignore:
+      - '.github/**'
   workflow_dispatch:
 jobs:
 
