@@ -8,6 +8,7 @@ namespace crazyxyr.SelectLastCarePackage
 {
     public class ModLoader : UserMod2
     {
+        internal static bool Patches2 = true;
         public override void OnLoad(Harmony harmony)
         {
 
@@ -31,6 +32,7 @@ namespace crazyxyr.SelectLastCarePackage
 
             else
             {
+                Patches2 = false;
                 Debug.LogFormat("[最后的补给包-Fix] 刷新按钮按钮被mod_workshop_id: {0} 启用", "2856555858");
             }
             foreach (MethodBase method in harmony.GetPatchedMethods())

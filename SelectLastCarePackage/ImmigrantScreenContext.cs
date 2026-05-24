@@ -91,7 +91,7 @@ namespace crazyxyr.SelectLastCarePackage
 
         public static void ShowButton(ImmigrantScreen __instance)
         {
-
+            if (!ModLoader.Patches2) { return; }
             List<ITelepadDeliverableContainer> deliverableContainerList = Traverse.Create(__instance).Field("containers").GetValue<List<ITelepadDeliverableContainer>>();
             if (deliverableContainerList != null)
             {
