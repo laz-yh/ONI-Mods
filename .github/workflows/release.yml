@@ -43,7 +43,7 @@ on:
     tags:
       - 'v*'
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
     paths-ignore:
       - '.github/**'
   workflow_dispatch:
