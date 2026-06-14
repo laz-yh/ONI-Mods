@@ -86,8 +86,8 @@
   </PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'CI' ">
-		<InstallFolder>$(SolutionDir)\output\$(MSBuildProjectName)</InstallFolder>
-		<DistributeFolder>$(SolutionDir)\Distribute\</DistributeFolder>
+		<InstallFolder>$(MSBuildThisFileDirectory)output\$(MSBuildProjectName)</InstallFolder>
+		<DistributeFolder>$(MSBuildThisFileDirectory)Distribute</DistributeFolder>
 
 	</PropertyGroup>
 

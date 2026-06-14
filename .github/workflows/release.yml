@@ -69,7 +69,7 @@ jobs:
     - name: Install .NET Core
       uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 10.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
@@ -82,7 +82,7 @@ jobs:
         cache-name: cache-mod
         files: '${{ matrix.configuration }}/*.cs'
       with:
-        path: ./Distribute
+        path: .\Distribute
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.configuration }}-${{ hashFiles(env.files) }}
         restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -105,6 +105,7 @@ jobs:
         cd ${{ github.workspace }}
         ls lib/
         msbuild $env:Configuration /t:Rebuild /p:Configuration=CI
+        ls Distribute/
       env:
         Configuration: ${{ matrix.configuration }}
 
@@ -114,7 +115,7 @@ jobs:
       id: artifact-upload-step
       with:
         name: ONI-Mods-${{ matrix.configuration }}
-        path: ${{ github.workspace }}/Distribute/${{ matrix.configuration }}.zip
+        path: ${{ github.workspace }}\Distribute\${{ matrix.configuration }}.zip
         archive: false
           
   release:
