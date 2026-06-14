@@ -16,7 +16,7 @@
 		  OutputPath="../lib/"/>
 	</Target>
 
-	<Target Name="CopyGameDlls" AfterTargets="Clean"  Condition=" '$(Configuration)' == 'Debug'" >
+	<Target Name="CopyGameDlls" AfterTargets="Publicise"  Condition=" '$(Configuration)' == 'Debug'" >
 		<ItemGroup>
 			<GameDlls Include="$(GameFolder)/0Harmony.dll" />
 			<GameDlls Include="$(GameFolder)/Newtonsoft.Json.dll" />
@@ -36,9 +36,11 @@
 	
 	
   <!--Increment the version number after each build, resetting each day.-->
-	<Target Name="AutoIncrement" BeforeTargets="WriteModInfoFile">
+	<Target Name="AutoIncrement" BeforeTargets="Build">
 		<PropertyGroup>
-			<_RevisionFile>$(ProjectDir)/revision.txt</_RevisionFile>
+			<_RevisionFile  Condition="  '$(Configuration)' != 'Debug' " >$(ProjectDir)/revision.txt</_RevisionFile>
+			<_RevisionFile  Condition="  '$(Configuration)' == 'Debug' " >$(IntermediateOutputPath)/revision.txt</_RevisionFile>
+
 			<_Today>$([System.DateTime]::Now.ToString("yyyyMMdd"))</_Today>
 		</PropertyGroup>
 
@@ -73,7 +75,7 @@
 	</Target>
 
   <!--Create and update the mod_info and mod file.-->
-  <Target Name="WriteModInfoFile" BeforeTargets="Build">
+  <Target Name="WriteModInfoFile" AfterTargets="AutoIncrement">
 	  <PropertyGroup>
 		  <ModInfoContent>
 			  APIVersion: 2;
