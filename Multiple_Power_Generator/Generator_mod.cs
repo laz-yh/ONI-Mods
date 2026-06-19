@@ -72,7 +72,7 @@ namespace Multiple_Power_Generator
         {
             private static void Postfix(ref float __result)
             {
-                __result = Mathf.Min(__result,100);
+                __result = Mathf.Min(__result,1);
             }
         }
 
@@ -81,10 +81,18 @@ namespace Multiple_Power_Generator
         {
             private static void Postfix(ref float __result)
             {
-                __result = Mathf.Min(__result, 100);
+                __result = Mathf.Min(__result, 1);
             }
         }
 
+        [HarmonyPatch(typeof(BatteryUI), "SetContent")]
+        public class BatteryUI_SetContent
+        {
+            private static void Pretfix(BatteryUI __instance,Battery bat, Dictionary<float, float> ___sizeMap)
+            {
+                ___sizeMap?.TryAdd(bat.Capacity, 40f);
+            }
+        }
 
         [HarmonyPatch(typeof(BatteryMediumConfig), "DoPostConfigureComplete")]
         public class Battery_BatteryMediumConfig
