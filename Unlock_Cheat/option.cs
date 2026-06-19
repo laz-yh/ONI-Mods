@@ -46,6 +46,10 @@ namespace Unlock_Cheat
         public bool HighEnergyParticle { get; set; }
 
         [JsonProperty]
+        [Option("液培砖内容物隔热", "液培砖内部液体不与外界温度交换", null)]
+        public bool HydroponicFarm { get; set; } = true;
+
+        [JsonProperty]
         [Option("植物变异", "种子/植物添加变异按钮.", "植物变异")]
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
 

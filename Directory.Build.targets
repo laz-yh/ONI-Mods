@@ -38,8 +38,8 @@
   <!--Increment the version number after each build, resetting each day.-->
 	<Target Name="AutoIncrement" BeforeTargets="Build">
 		<PropertyGroup>
-			<_RevisionFile  Condition="  '$(Configuration)' != 'Debug' " >$(ProjectDir)/revision.txt</_RevisionFile>
-			<_RevisionFile  Condition="  '$(Configuration)' == 'Debug' " >$(IntermediateOutputPath)/revision.txt</_RevisionFile>
+			<_RevisionFile >$(IntermediateOutputPath)/revision.txt</_RevisionFile>
+			<_RevisionFile  Condition="  '$(Configuration)' != 'Debug' And '$(ShouldDistribute)' != 'false'" >$(ProjectDir)/revision.txt</_RevisionFile>
 
 			<_Today>$([System.DateTime]::Now.ToString("yyyyMMdd"))</_Today>
 		</PropertyGroup>
