@@ -42,6 +42,9 @@
 			<_RevisionFile  Condition="  '$(Configuration)' != 'Debug' And '$(ShouldDistribute)' != 'false'" >$(ProjectDir)/revision.txt</_RevisionFile>
 
 			<_Today>$([System.DateTime]::Now.ToString("yyyyMMdd"))</_Today>
+			<_Revision>0</_Revision>
+			<_OldDate>$(_Today)</_OldDate>
+			<_OldRev>$(_Revision)</_OldRev>
 		</PropertyGroup>
 
 		<!-- 读取旧值 -->
@@ -56,11 +59,13 @@
 			<_OldRev>$(_OldLine.Substring(9))</_OldRev>
 		</PropertyGroup>
 
-		<PropertyGroup Condition="'$(_Today)' != '$(_OldDate)'">
-			<_Revision>0</_Revision>
-		</PropertyGroup>
 		<PropertyGroup Condition="'$(_Today)' == '$(_OldDate)'">
 			<_Revision>$([MSBuild]::Add($(_OldRev), 1))</_Revision>
+		</PropertyGroup>
+
+		<PropertyGroup  Condition=" '$(Configuration)' == 'CI' ">
+			<_Revision>$(_OldRev)</_Revision>
+			<_Today>$(_OldDate)</_Today>
 		</PropertyGroup>
 
 		<!-- 写回 -->
@@ -70,7 +75,7 @@
 
 		<PropertyGroup>
 			<ProjectRevision>$(_Revision)</ProjectRevision>
-			<Version>$([System.DateTime]::Now.Year).$([System.DateTime]::Now.Month).$([System.DateTime]::Now.Day).$(_Revision)</Version>
+			<Version>$(_Today.Substring(0,4)).$(_Today.Substring(4,2)).$(_Today.Substring(6,2)).$(_Revision)</Version>
 		</PropertyGroup>
 	</Target>
 

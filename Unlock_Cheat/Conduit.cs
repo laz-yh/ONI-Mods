@@ -15,8 +15,7 @@ namespace Unlock_Cheat.Conduit_mod
         [HarmonyPatch("FreezeConduitContents")]  //过冷损坏
         public class ConduitFlow_FreezeConduitContents_Patch
         {
-            // Token: 0x06000007 RID: 7
-            public static bool Prefix(ConduitFlow __instance)
+                        public static bool Prefix(ConduitFlow __instance)
             {
 
               return false;
@@ -29,8 +28,7 @@ namespace Unlock_Cheat.Conduit_mod
         [HarmonyPatch("MeltConduitContents")]  //过热损坏
         public class ConduitFlow_MeltConduitContents_Patch
         {
-            // Token: 0x06000007 RID: 7
-            public static bool Prefix(ConduitFlow __instance)
+                        public static bool Prefix(ConduitFlow __instance)
             {
 
                 return false;

@@ -16,8 +16,7 @@ namespace Unlock_Cheat.AchievementUnlock
         [HarmonyPatch("Load")]
         public class Game_Load_Patch
         {
-            // Token: 0x06000007 RID: 7
-            public static void Postfix(Game __instance)
+                        public static void Postfix(Game __instance)
             {
 
                 if (__instance.debugWasUsed)
@@ -32,8 +31,7 @@ namespace Unlock_Cheat.AchievementUnlock
         [HarmonyPatch("UnlockPlatformAchievement")]
         public class ColonyAchievementTracker_UnlockPlatformAchievement_Patch
         {
-            // Token: 0x06000007 RID: 7
-            public static bool Prefix(string achievement_id)
+                        public static bool Prefix(string achievement_id)
             {
                 //  __result.sandboxEnabled=true;
                 //return __result;
@@ -74,8 +72,7 @@ namespace Unlock_Cheat.AchievementUnlock
         [HarmonyPatch("OnShow")]
         public class RetiredColonyInfoScreen_OnShow_Patch
         {
-            // Token: 0x06000007 RID: 7
-            public static void Postfix(RetiredColonyInfoScreen __instance)
+                        public static void Postfix(RetiredColonyInfoScreen __instance)
             {
                 //  __result.sandboxEnabled=true;
                 //return __result;

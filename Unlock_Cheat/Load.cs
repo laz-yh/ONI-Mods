@@ -18,7 +18,6 @@ namespace Unlock_Cheat
 
         public class Load : UserMod2
         {
-            // Token: 0x0600002A RID: 42 RVA: 0x0000239F File Offset: 0x0000059F
 
             Dictionary<string, string> translations;
             private const string SuppressNotifications = "1832319118";
