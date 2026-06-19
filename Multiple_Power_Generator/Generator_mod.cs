@@ -73,6 +73,25 @@ namespace Multiple_Power_Generator
 
 
 
+        [HarmonyPatch(typeof(Battery), "PercentFull", MethodType.Getter)]
+        public class Battery_PercentFull
+        {
+            private static void Postfix(ref float __result)
+            {
+                __result = Mathf.Min(__result,100);
+            }
+        }
+
+        [HarmonyPatch(typeof(Battery), "PreviousPercentFull", MethodType.Getter)]
+        public class Battery_PreviousPercentFull
+        {
+            private static void Postfix(ref float __result)
+            {
+                __result = Mathf.Min(__result, 100);
+            }
+        }
+
+
         [HarmonyPatch(typeof(BatteryMediumConfig), "DoPostConfigureComplete")]
         public class Battery_BatteryMediumConfig
         {
