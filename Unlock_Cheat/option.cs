@@ -50,6 +50,10 @@ namespace Unlock_Cheat
         public bool HydroponicFarm { get; set; } = true;
 
         [JsonProperty]
+        [Option("材料研究终端", "粒子存储最大值允许手动修改", null)]
+        public bool NuclearResearch { get; set; } = true;
+
+        [JsonProperty]
         [Option("植物变异", "种子/植物添加变异按钮.", "植物变异")]
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
 

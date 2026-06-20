@@ -64,7 +64,14 @@ namespace Unlock_Cheat
                 public static LocString LAST_OWNED = "这个皮肤数量是你拥有的<color=#ff0000ff>最后的一件</color>，分解后就没有了";
             }
 
-         }
+            public class NUCLEARRESEARCHCENTER
+            {
+
+                public static LocString TITLE = "辐射粒子存储值";
+                public static LocString TOOLTIP = "当前能储存<b>{0}</b><style=\"KKeyword\">辐射粒子</style>";
+            }
+
+        }
 
         internal static bool TryLoadTranslations(out Dictionary<string, string> translations)
         {
