@@ -91,8 +91,12 @@ namespace Unlock_Cheat.NuclearResearchCenter
             component.OnCopySettings(data);
         });
 
+#pragma warning disable CS0649, CS0169 // 禁用 "从未赋值" 警告
+        [HideInInspector]
         [MyCmpReq]
         private HighEnergyParticleStorage storage;
+#pragma warning restore CS0649, CS0169 // 恢复警告
+
 
         public int minSlider = 100;
 

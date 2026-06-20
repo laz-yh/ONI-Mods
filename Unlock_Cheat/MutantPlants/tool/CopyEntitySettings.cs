@@ -34,8 +34,8 @@ namespace Unlock_Cheat.MutantPlants.CopySetting
     class MutantCopyButton : CopySettingsTool
 
     {
-        #pragma warning disable CS0649 // 禁用 "从未赋值" 警告
+#pragma warning disable CS0649,CS0169 // 禁用 "从未赋值" 警告
         [MyCmpAdd] private MutantCopyBuildingSettings copyEntitySettings;
-        #pragma warning restore CS0649 // 恢复警告
+#pragma warning restore CS0649, CS0169 // 恢复警告
     }
 }

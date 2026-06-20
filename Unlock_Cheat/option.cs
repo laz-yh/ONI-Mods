@@ -41,17 +41,17 @@ namespace Unlock_Cheat
         public bool CircuitOverloaded { get; set; }
 
         [JsonProperty]
-        [Option("辐射粒子移动衰减", "取消辐射粒子移动衰减", null)]
-        [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
-        public bool HighEnergyParticle { get; set; }
-
-        [JsonProperty]
         [Option("液培砖内容物隔热", "液培砖内部液体不与外界温度交换", null)]
         public bool HydroponicFarm { get; set; } = true;
 
         [JsonProperty]
-        [Option("材料研究终端", "粒子存储最大值允许手动修改", null)]
-        public bool NuclearResearch { get; set; } = true;
+        [Option("擦拭", "擦拭无视液体质量", null)]
+        public bool MopTool { get; set; }
+
+        [JsonProperty]
+        [Option("辐射粒子移动衰减", "取消辐射粒子移动衰减", null)]
+        [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
+        public bool HighEnergyParticle { get; set; }
 
         [JsonProperty]
         [Option("植物变异", "种子/植物添加变异按钮.", "植物变异")]
@@ -101,7 +101,7 @@ namespace Unlock_Cheat
         [Option("伤害修改", "单发火箭伤害", "宇宙内爆破弹")]
         [Limit(0, 1000)]
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
-
+        [RequireDLCAttribute(DlcManager.DLC4_ID)]
         public int MissileLongRange_damage { get; set; } = 10;
 
 
@@ -116,9 +116,6 @@ namespace Unlock_Cheat
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
         public bool RocketTile_Deconstruction { get; set; } = false;
 
-        [JsonProperty]
-        [Option("擦拭", "擦拭无视液体质量", null)]
-        public bool MopTool { get; set; }
 
         [JsonProperty]
         [Option("菌泥", "", "禁止物质挥发")]
