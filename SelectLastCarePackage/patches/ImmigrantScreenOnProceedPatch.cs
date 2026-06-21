@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 
-namespace crazyxyr.SelectLastCarePackage.Patches
+namespace laz_yh.SelectLastCarePackage.Patches
 {
     [HarmonyPatch(typeof(ImmigrantScreen), "OnProceed")]
     public static class ImmigrantScreenOnProceedPatch //按下打印按钮

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 using HarmonyLib;
-using crazyxyr.Commons;
+using laz_yh.Commons;
 using UnityEngine;
 
-namespace crazyxyr.SelectLastCarePackage.Patches
+namespace laz_yh.SelectLastCarePackage.Patches
 {
     [HarmonyPatch(typeof(ImmigrantScreen), "OnRejectAll")]
     public static class ImmigrantScreenOnRejectAllPatch //按下拒绝全部按钮

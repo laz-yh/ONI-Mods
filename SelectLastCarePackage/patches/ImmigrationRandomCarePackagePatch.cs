@@ -2,7 +2,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace crazyxyr.SelectLastCarePackage.Patches
+namespace laz_yh.SelectLastCarePackage.Patches
 {
     [HarmonyPatch(typeof(Immigration), "RandomCarePackage")]
     public static class ImmigrationRandomCarePackagePatch // 随机补给包

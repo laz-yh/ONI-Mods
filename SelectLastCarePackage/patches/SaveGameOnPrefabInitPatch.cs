@@ -1,6 +1,6 @@
 using HarmonyLib;
 
-namespace crazyxyr.SelectLastCarePackage.Patches
+namespace laz_yh.SelectLastCarePackage.Patches
 {
     [HarmonyPatch(typeof(SaveGame), "OnPrefabInit")]
     public static class SaveGameOnPrefabInitPatch //初始化

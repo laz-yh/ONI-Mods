@@ -8,7 +8,7 @@
     <None Remove="Previews\**" />
   </ItemGroup>
 
-  <!--Publicise the game's assemblies on rebuilds.-->
+	<!--Publicise the game's assemblies on rebuilds.-->
 
 	<Target Name="Publicise" AfterTargets="Clean" Condition="'$(UsesAzeLib)' == 'true'  And '$(Configuration)' == 'Debug' ">
 		<Publicise
@@ -97,7 +97,7 @@
       <Title Condition=" '$(Configuration)' == 'Debug' ">DEV: $(Title)</Title>
     </PropertyGroup>
     <WriteLinesToFile File="$(ModFile)" Overwrite="true" Lines=
-                      "staticID: crazyxyr.$(AssemblyName);
+                      "staticID: laz_yh.$(AssemblyName);
                       description: &quot;$(Description)&quot;;
                       title: &quot;$(Title)&quot;" />
   </Target>

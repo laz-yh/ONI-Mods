@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static CarePackageContainer;
 
-namespace crazyxyr.SelectLastCarePackage.Patches2
+namespace laz_yh.SelectLastCarePackage.Patches2
 {
 
     [HarmonyPatch(typeof(CharacterSelectionController), "AddDeliverable")]

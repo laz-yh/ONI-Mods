@@ -3,7 +3,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace crazyxyr.SelectLastCarePackage.Patches2
+namespace laz_yh.SelectLastCarePackage.Patches2
 {
     [HarmonyPatch(typeof(ImmigrantScreen), "Initialize")]
     public static class ImmigrantScreenInitializePatch

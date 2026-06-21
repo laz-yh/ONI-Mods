@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: zh_CN\n"
 
-#. crazyxyr.SelectLastCarePackage.Languages.REROLL
-msgctxt "crazyxyr.SelectLastCarePackage.Languages.REROLL"
+#. laz_yh.SelectLastCarePackage.Languages.REROLL
+msgctxt "laz_yh.SelectLastCarePackage.Languages.REROLL"
 msgid "REROLL"
 msgstr "再来亿次"

@@ -3,7 +3,7 @@ using KSerialization;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace crazyxyr.SelectLastCarePackage
+namespace laz_yh.SelectLastCarePackage
 {
     public class ImmigrantScreenContext : KMonoBehaviour
     {

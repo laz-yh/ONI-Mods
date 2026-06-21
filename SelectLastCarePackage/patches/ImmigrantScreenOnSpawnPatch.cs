@@ -1,7 +1,7 @@
 using HarmonyLib;
 using STRINGS;
-using crazyxyr.Commons;
-namespace crazyxyr.SelectLastCarePackage.Patches
+using laz_yh.Commons;
+namespace laz_yh.SelectLastCarePackage.Patches
 {
     [HarmonyPatch(typeof(ImmigrantScreen), "OnSpawn")]
     public static class ImmigrantScreenOnSpawnPatch // 显示选人界面

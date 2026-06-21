@@ -1,10 +1,10 @@
 using System.Reflection;
 using HarmonyLib;
 using KMod;
-using crazyxyr.Commons;
+using laz_yh.Commons;
 using System.Collections.Generic;
 
-namespace crazyxyr.SelectLastCarePackage
+namespace laz_yh.SelectLastCarePackage
 {
     public class ModLoader : UserMod2
     {
@@ -13,7 +13,7 @@ namespace crazyxyr.SelectLastCarePackage
         {
 
             ManualPatch.ManualPatch_init(harmony, this.assembly.GetTypes());
-            ManualPatch.ManualPatch_NS("crazyxyr.SelectLastCarePackage.Patches");
+            ManualPatch.ManualPatch_NS("laz_yh.SelectLastCarePackage.Patches");
 #if DEBUG
             ModUtil.RegisterForTranslation(typeof(Languages));
 #else
@@ -26,7 +26,7 @@ namespace crazyxyr.SelectLastCarePackage
         {
             if ( !ModUtils.HasModbydlc(mods, new List<string>() {"2856555858"}))
             {
-                ManualPatch.ManualPatch_NS("crazyxyr.SelectLastCarePackage.Patches2");
+                ManualPatch.ManualPatch_NS("laz_yh.SelectLastCarePackage.Patches2");
                 Debug.Log("[最后的补给包-Fix] 刷新按钮启用");
             }
 
