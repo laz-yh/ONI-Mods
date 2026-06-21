@@ -25,6 +25,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\Storage_Isolation\Storage_Isolation.cs" Link="Storage_Isolation.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
     <None Update="preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -34,5 +38,5 @@
 	  <Folder Include="archived_versions\Previous_693461\" />
 	  <Folder Include="Translations\" />
 	</ItemGroup>
- 
+
 </Project>

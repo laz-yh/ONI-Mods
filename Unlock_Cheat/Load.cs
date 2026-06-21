@@ -55,7 +55,7 @@ namespace Unlock_Cheat
                 if (Options.CircuitOverloaded) ManualPatch.ManualPatch_NS("Unlock_Cheat.CircuitOverloaded");
                 if (Options.MopTool) ManualPatch.ManualPatch_NS("Unlock_Cheat.MopTool_Patch");
                 if(Options.AutoGoToMedBed) ManualPatch.ManualPatch_NS("Unlock_Cheat.AutoGoToMedBed");
-                if(Options.HydroponicFarm) ManualPatch.ManualPatch_NS("Unlock_Cheat.HydroponicFarm");
+                if(Options.Storage_Patch) ManualPatch.ManualPatch_NS("Storage_Isolation");
 
                 if (DlcManager.IsExpansion1Active()) {
                     if (Options.MutantPlant) ManualPatch.ManualPatch_NS("Unlock_Cheat.MutantPlants");

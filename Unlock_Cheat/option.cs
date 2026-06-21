@@ -41,8 +41,8 @@ namespace Unlock_Cheat
         public bool CircuitOverloaded { get; set; }
 
         [JsonProperty]
-        [Option("液培砖内容物隔热", "液培砖内部液体不与外界温度交换", null)]
-        public bool HydroponicFarm { get; set; } = true;
+        [Option("存储箱内容物隔离", "建筑内部存储箱不与外界温度交换", null)]
+        public bool Storage_Patch { get; set; } = true;
 
         [JsonProperty]
         [Option("擦拭", "擦拭无视液体质量", null)]

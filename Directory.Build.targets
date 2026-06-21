@@ -36,7 +36,7 @@
 	
 	
   <!--Increment the version number after each build, resetting each day.-->
-	<Target Name="AutoIncrement" BeforeTargets="Build">
+	<Target Name="AutoIncrement" BeforeTargets="SetAutoVersion">
 		<PropertyGroup>
 			<_RevisionFile >$(IntermediateOutputPath)/revision.txt</_RevisionFile>
 			<_RevisionFile  Condition="  '$(Configuration)' != 'Debug' And '$(ShouldDistribute)' != 'false'" >$(ProjectDir)/revision.txt</_RevisionFile>
@@ -109,6 +109,15 @@
     </ItemGroup>
   </Target>
 
+<Target Name="SetDllVersion" BeforeTargets="ResolveAssemblyReferences">
+	<PropertyGroup>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+	</PropertyGroup>
+</Target>
+	
+	
+	
   <!--Merge required assemblies.-->
   <Target Name="ILRepack" AfterTargets="Build" Condition=" '$(ILRepack)' != 'false'">
     <!--The primary assembly must be the first one, so this is ugly.-->
