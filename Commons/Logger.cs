@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace crazyxyr.Commons
+namespace laz_yh.Commons
 {
     public class Logger
     {

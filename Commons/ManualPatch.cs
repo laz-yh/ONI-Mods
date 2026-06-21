@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace crazyxyr.Commons
+namespace laz_yh.Commons
 {
     public static  class ManualPatch
     {

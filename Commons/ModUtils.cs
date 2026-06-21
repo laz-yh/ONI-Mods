@@ -3,7 +3,7 @@ using HarmonyLib;
 using KMod;
 using static STRINGS.UI.FRONTEND;
 
-namespace crazyxyr.Commons
+namespace laz_yh.Commons
 {
     public static class ModUtils
     {
