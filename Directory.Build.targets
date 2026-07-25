@@ -120,7 +120,7 @@
 	
 	
   <!--Merge required assemblies.-->
-  <Target Name="ILRepack" AfterTargets="Build" Condition=" '$(ILRepack)' != 'false'">
+  <Target Name="ILRepack" AfterTargets="WriteModInfoFile" Condition=" '$(ILRepack)' != 'false'">
     <!--The primary assembly must be the first one, so this is ugly.-->
     <ItemGroup>
       <InputAssemblies Include ="$(TargetPath)" />
