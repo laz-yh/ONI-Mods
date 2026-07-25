@@ -1,13 +1,9 @@
-﻿using Epic.OnlineServices.Platform;
-using HarmonyLib;
+﻿using HarmonyLib;
 using KMod;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Multiple_Power_Generator
@@ -145,7 +141,7 @@ namespace Multiple_Power_Generator
             public static void Postfix(PowerTransformerConfig __instance, GameObject go)
             {
                 Battery battery = go.AddOrGet<Battery>();
-                battery.capacity = battery.capacity * SingletonOptions<Options>.Instance.BatteryRatio;
+                battery.capacity *= SingletonOptions<Options>.Instance.BatteryRatio;
 
 
             }
@@ -156,7 +152,7 @@ namespace Multiple_Power_Generator
             public static void Postfix(PowerTransformerSmallConfig __instance, GameObject go)
             {
                 Battery battery = go.AddOrGet<Battery>();
-                battery.capacity = battery.capacity * SingletonOptions<Options>.Instance.BatteryRatio;
+                battery.capacity *= SingletonOptions<Options>.Instance.BatteryRatio;
 
 
             }
