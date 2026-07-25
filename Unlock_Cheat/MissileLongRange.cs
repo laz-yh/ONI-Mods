@@ -17,7 +17,7 @@ namespace Unlock_Cheat.MissileLongRange
         {
             public static bool Prefix(LargeImpactorStatus __instance,ref int damage)
             {
-                damage = Unlock_Cheat.Options.MissileLongRange_damage; ;
+                damage = Unlock_Cheat.Options.MissileLongRange_damage;
                 return true;
             }
 

@@ -10,8 +10,7 @@ namespace Multiple_Power_Generator
 {
     public abstract class SingletonOptions<T> where T : class, new()
     {
-                // (get) Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
-        // (set) Token: 0x06000002 RID: 2 RVA: 0x0000209C File Offset: 0x0000029C
+
         public static T Instance
         {
             get
@@ -55,21 +54,19 @@ namespace Multiple_Power_Generator
         [Limit(0.1,100)]
         public float PowerRatio { get; set; }
 
-                // (get) Token: 0x06000643 RID: 1603 RVA: 0x00019728 File Offset: 0x00017928
-        // (set) Token: 0x06000644 RID: 1604 RVA: 0x00019730 File Offset: 0x00017930
+
         [JsonProperty]
         [Option("电线倍率", "WireRatio default is 100.", null)]
         [Limit(0.1, 1000)]
         public float WireRatio { get; set; }
 
-                // (get) Token: 0x06000645 RID: 1605 RVA: 0x00019739 File Offset: 0x00017939
-        // (set) Token: 0x06000646 RID: 1606 RVA: 0x00019741 File Offset: 0x00017941
+
         [JsonProperty]
         [Option("电池倍率", "BatteryRatio default is 10.", null)]
         [Limit(0.1, 100)]
         public float BatteryRatio { get; set; }
 
-                public Options()
+        public Options()
         {
             this.PowerRatio = 10f;
             this.WireRatio = 100f;
