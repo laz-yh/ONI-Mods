@@ -68,11 +68,6 @@
 			<_Today>$(_OldDate)</_Today>
 		</PropertyGroup>
 
-		<!-- 写回 -->
-		<WriteLinesToFile File="$(_RevisionFile)"
-						  Lines="$(_Today)|$(_Revision)"
-						  Overwrite="true" />
-
 		<PropertyGroup>
 			<ProjectRevision>$(_Revision)</ProjectRevision>
 			<Version>$(_Today.Substring(0,4)).$(_Today.Substring(4,2)).$(_Today.Substring(6,2)).$(_Revision)</Version>
@@ -80,7 +75,7 @@
 	</Target>
 
   <!--Create and update the mod_info and mod file.-->
-  <Target Name="WriteModInfoFile" AfterTargets="AutoIncrement" >
+  <Target Name="WriteModInfoFile" AfterTargets="Build" >
 	  <PropertyGroup>
 		  <ModInfoContent>
 			  APIVersion: 2;
@@ -100,10 +95,15 @@
                       "staticID: laz_yh.$(AssemblyName);
                       description: &quot;$(Description)&quot;;
                       title: &quot;$(Title)&quot;" />
+
+	  <!-- 写回 -->
+	  <WriteLinesToFile File="$(_RevisionFile)"
+						Lines="$(_Today)|$(_Revision)"
+						Overwrite="true" />
   </Target>
 	
 	
-	<Target Name="SetDllVersion" AfterTargets="WriteModInfoFile">
+	<Target Name="SetDllVersion" AfterTargets="AutoIncrement">
 		<PropertyGroup>
 			<AssemblyVersion>$(Version)</AssemblyVersion>
 			<FileVersion>$(Version)</FileVersion>
