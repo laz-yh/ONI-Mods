@@ -111,11 +111,22 @@ namespace Unlock_Cheat
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
         public float BasicRadPill_MinRAD { get; set; } = 0f;
 
+
         [JsonProperty]
-        [Option("火箭舱墙壁可拆除", "火箭舱墙壁可以被拆除", null)]
+        [Option("启用", "启用火箭修改器", "火箭")]
+        [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
+        public bool Rocket_Enable { get; set; } = false;
+        [JsonProperty]
+        [Option("火箭舱墙壁可拆除", "火箭舱墙壁可以被拆除", "火箭")]
         [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
         public bool RocketTile_Deconstruction { get; set; } = false;
 
+        [JsonProperty]
+        [Option("火箭移动速度", "调整火箭移动速度倍率", "火箭")]
+        [RequireDLCAttribute(DlcManager.EXPANSION1_ID)]
+        [Limit(1, 10)]
+
+        public float Rocket_Speed { get; set; } = 1f;
 
         [JsonProperty]
         [Option("菌泥", "", "禁止物质挥发")]
