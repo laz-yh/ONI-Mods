@@ -56,6 +56,8 @@ jobs:
         configuration: [GeoTuner_mod, Multiple_Power_Generator, SelectLastCarePackage, Unlock_Cheat, NuclearResearch, Storage_Isolation]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
+    permissions:
+      contents: read
     env:
       Solution_Name: ONI-Mods.sln                       # Replace with your solution name, i.e. MyWpfApp.sln.
 
