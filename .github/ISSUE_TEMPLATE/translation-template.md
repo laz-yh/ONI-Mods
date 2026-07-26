@@ -1,21 +1,20 @@
 ---
 name: translation template
 about: Upload a translation file.
-title: Chinese translation
-labels: i18n
+title: ''
+labels: ''
 assignees: ''
-type: Feature
 
 ---
 
-**Which mod?**
-Please provide the name of the mod you wish to upload for translation.
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**Which language would you like the translation?**
-Please provide the id of the translation language, such as en (English) and zh (Chinese).
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
 
-**Upload translation file**
-Drop the translation file into this issue.
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
