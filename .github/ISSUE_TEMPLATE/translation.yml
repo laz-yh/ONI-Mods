@@ -1,0 +1,47 @@
+name: translation template
+description: Upload a new translation file.
+title: "[Translation] "
+labels: ["i18n"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for uploading the new translation request! Please fill in the following information to help us understand your requirements.
+        
+  - type: dropdown
+    id: mod-name
+    attributes:
+      label: mod-name
+      description: Please provide the name of the mod you wish to upload for translation.
+      options:
+        - Multiple_Power_Generator
+        - SelectLastCarePackage
+        - GeoTuner_mod
+        - Other
+    validations:
+      required: true
+      
+  - type: input
+    id: translation-language
+    attributes:
+      label: translation-language
+      description: Which language would you like the translation?
+      placeholder: such as en (English) and zh (Chinese)
+    validations:
+      required: true
+      
+  - type: textarea
+    id: upload-file
+    attributes:
+      label: Upload translation file
+      description: Drop the translation file into this issue.
+    validations:
+      required: false    
+      
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: additional-info
+      description: Add any other context about the feature request here.
+    validations:
+      required: false
