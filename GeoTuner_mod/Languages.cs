@@ -41,8 +41,8 @@ namespace GeoTuner_mod
                     }
                     public class BROKER_VANILLA
                 {
-                        public static LocString TITLE = "Broker Vanilla";
-                        public static LocString TOOLTIP = "Geotuners can tune a GEYSER simultaneously like VANILLA";
+                        public static LocString TITLE = "Vanilla GeoTuner";
+                        public static LocString TOOLTIP = "Multiple Geotuners can tune a GEYSER simultaneously like VANILLA";
 
                     }
                     public class ENERGYCONSUMER

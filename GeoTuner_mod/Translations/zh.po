@@ -28,12 +28,12 @@ msgstr "调谐"
 
 #. GeoTuner_mod.UI.UISIDESCREENS.OPTION.BROKER_VANILLA.TITLE
 msgctxt "GeoTuner_mod.UI.UISIDESCREENS.OPTION.BROKER_VANILLA.TITLE"
-msgid "BROKER VANILLA"
-msgstr "调谐仪原版限制"
+msgid "Vanilla GeoTuner"
+msgstr "原版调谐仪"
 
 #. GeoTuner_mod.UI.UISIDESCREENS.OPTION.BROKER_VANILLA.TOOLTIP
 msgctxt "GeoTuner_mod.UI.UISIDESCREENS.OPTION.BROKER_VANILLA.TOOLTIP"
-msgid "Geotuners can tune a GEYSER simultaneously like VANILLA"
+msgid "Multiple Geotuners can tune a GEYSER simultaneously like VANILLA"
 msgstr "地质调谐仪像原版一样同时调谐一个泉"
 
 #. GeoTuner_mod.UI.UISIDESCREENS.OPTION.ENERGYCONSUMER.TITLE
