@@ -7,9 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Title>调谐仪(多合一)</Title>
-    <Description>间歇泉协调多合一.</Description>
+    <Title>GeoTuner all in one 调谐仪(多合一)</Title>
+    <Description>Multiple tuners for a single geyser merged into one. (间歇泉协调多合一)</Description>
 	  <UsesPLib>true</UsesPLib>
+	  <UseCommons>true</UseCommons>
+
 
   </PropertyGroup>
   

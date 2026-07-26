@@ -8,11 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using static Localization;
 namespace GeoTuner_mod
 {
 
     internal class HarmonyPatches : UserMod2
     {
+        static Dictionary<string, string> translations;
 
         public override void OnLoad(Harmony harmony)
         {
@@ -33,6 +35,8 @@ namespace GeoTuner_mod
             {
                 Patches.Patch_EnergyConsumer_WattsNeededWhenActive.Patch(harmony);
             }
+
+            Commons.Translation_Patch.TryLoadTranslations(this, out translations);
 
         }
     }

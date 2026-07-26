@@ -35,19 +35,8 @@ namespace Unlock_Cheat
             Localization.RegisterForTranslation(typeof(Languages));
 #endif
 
-                if (Languages.TryLoadTranslations(out translations))
-                {
+                Commons.Translation_Patch.TryLoadTranslations(this, out translations);
 
-                    Localization.OverloadStrings(translations);
-
-                    Debug.Log("[Unlock_Cheat] 翻译加载成功 "+ translations.Count);
-
-                }
-                else {
-
-                    Debug.Log("[Unlock_Cheat] 翻译加载失败");
-
-                }
                 if (Options.Achievement) ManualPatch.ManualPatch_NS("Unlock_Cheat.AchievementUnlock");
                 if (Options.Skin) ManualPatch.ManualPatch_NS("Unlock_Cheat.ItemSkinUnlock");
                 if (Options.Conduit) ManualPatch.ManualPatch_NS("Unlock_Cheat.Conduit_mod");

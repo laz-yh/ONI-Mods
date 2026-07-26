@@ -1,7 +1,15 @@
 msgid ""
 msgstr ""
-"Application: Oxygen Not Included"
-"POT Version: 2.0"
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. GeoTuner_mod.UI.UISIDESCREENS.GEOTUNERADJUSTABLE.TITLE
 msgctxt "GeoTuner_mod.UI.UISIDESCREENS.GEOTUNERADJUSTABLE.TITLE"

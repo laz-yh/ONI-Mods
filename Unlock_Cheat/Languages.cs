@@ -72,22 +72,6 @@ namespace Unlock_Cheat
             }
 
         }
-
-        internal static bool TryLoadTranslations(out Dictionary<string, string> translations)
-        {
-            string path = Unlock_Cheat.UnlockCheat.path;
-            string path2 = "Translations";
-            Localization.Locale locale = Localization.GetLocale();
-            string path3 = Path.Combine(path, path2, ((locale != null) ? locale.Code : "zh") + ".po");
-            if (File.Exists(path3))
-            {
-                translations =Localization.LoadStringsFile(path3, false);
-                return true;
-            }
-            translations = null;
-            return false;
-        }
-
     }
 
 }
