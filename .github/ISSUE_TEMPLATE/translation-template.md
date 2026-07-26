@@ -1,5 +1,5 @@
 ---
-name: translation template
+name: translation template1
 about: Upload a translation file.
 title: Chinese translation
 labels: i18n
