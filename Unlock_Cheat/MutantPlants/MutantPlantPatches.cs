@@ -65,7 +65,7 @@ namespace Unlock_Cheat.MutantPlants
             MutantPlantPatches.OnCopySettings(component,data);
         });
 
-        [HarmonyPatch(typeof(MutantPlant), "OnSpawn")]
+        [HarmonyPatch(typeof(MutantPlant), "OnPrefabInit")]
         public static class MutantPlant_OnSpawn
         {
             public static void Postfix(MutantPlant __instance)
