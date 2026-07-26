@@ -1,4 +1,4 @@
-name: translation template
+name: translation template(English)
 description: Upload a new translation file.
 title: "[Translation] "
 labels: ["i18n"]
@@ -34,9 +34,9 @@ body:
     id: upload-file
     attributes:
       label: Upload translation file
-      description: Drop the translation file into this issue.
+      description: Please upload via the attachment..
     validations:
-      required: false    
+      required: true    
       
   - type: textarea
     id: additional-info

@@ -1,0 +1,47 @@
+name:  翻译文件(中文)
+description: 上传一个新的翻译文件.
+title: "[Translation] "
+labels: ["i18n"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提出翻译上传请求！请填写以下信息帮助我们了解您的需求.
+        
+  - type: dropdown
+    id: mod-name
+    attributes:
+      label: mod名字
+      description: 请提供你要上传哪个mod的翻译文件.
+      options:
+        - Multiple_Power_Generator
+        - SelectLastCarePackage
+        - GeoTuner_mod
+        - Other
+    validations:
+      required: true
+      
+  - type: input
+    id: translation-language
+    attributes:
+      label:  翻译的语言
+      description: 请提供你要翻译哪种语言?
+      placeholder: 比如en (英语) zh (中文)
+    validations:
+      required: true
+      
+  - type: textarea
+    id: upload-file
+    attributes:
+      label: 上传翻译文件
+      description: 请附件上传一个.po翻译文件.
+    validations:
+      required: true    
+      
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 额外信息
+      description: 是否有其他额外信息提供.
+    validations:
+      required: false
