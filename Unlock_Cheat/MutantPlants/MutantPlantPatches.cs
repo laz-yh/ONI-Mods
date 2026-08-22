@@ -1,12 +1,7 @@
 ﻿using HarmonyLib;
-using System;
-using UnityEngine;
 using Klei.AI;
-using Database;
 using PeterHan.PLib.Options;
-using static Unlock_Cheat.Languages.UI.USERMENUACTIONS;
-using System.Linq;
-using static DiscreteShadowCaster;
+using UnityEngine;
 
 namespace Unlock_Cheat.MutantPlants
 {
@@ -103,6 +98,32 @@ namespace Unlock_Cheat.MutantPlants
 
             }
         }
+
+
+        [HarmonyPatch(typeof(Crop), "SpawnAndGetSomeFruit")]
+        public static class Crop_SpawnAndGetSomeFruit
+        {
+            public static void Postfix(Crop __instance, Tag cropID, GameObject __result)
+            {
+
+                if (!__instance.gameObject.TryGetComponent<SeedProducer>(out var seedProducer))
+                    return;
+
+                if (seedProducer.seedInfo.productionType != SeedProducer.ProductionType.Crop)
+                    return;
+
+                if (!__result.TryGetComponent<MutantPlant>(out var targetPlant) || !targetPlant.IsOriginal)
+                    return;
+
+                if (__instance.gameObject.TryGetComponent<MutantPlant>(out var sourcePlant) && !sourcePlant.IsOriginal)
+                {
+                    sourcePlant.CopyMutationsTo(targetPlant);
+                }
+
+
+            }
+        }
+
 
         [HarmonyPatch(typeof(PlantMutation), "GetTooltip")]
         public static class PlantMutation_GetTooltip
