@@ -9,5 +9,7 @@
 	  <ILRepack>false</ILRepack>
 	  <UsesAzeLib>true</UsesAzeLib>
   </PropertyGroup>
-
+  <ItemGroup>
+		<RequiredDlcIds Include="EXPANSION1_ID" />	
+  </ItemGroup>
 </Project>
